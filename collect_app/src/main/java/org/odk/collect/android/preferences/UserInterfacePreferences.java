@@ -184,13 +184,9 @@ public class UserInterfacePreferences extends BasePreferenceFragment {
         String[] onlineLayerEntryValues;
         String[] onlineLayerEntries;
 
-        if (mapSdk.getValue().equals(OSM_BASEMAP_KEY)) {
-            onlineLayerEntryValues = getResources().getStringArray(R.array.map_osm_basemap_selector_entry_values);
-            onlineLayerEntries = getResources().getStringArray(R.array.map_osm_basemap_selector_entries);
-        } else {
-            onlineLayerEntryValues = getResources().getStringArray(R.array.map_google_basemap_selector_entry_values);
-            onlineLayerEntries = getResources().getStringArray(R.array.map_google_basemap_selector_entries);
-        }
+        onlineLayerEntryValues = getResources().getStringArray(R.array.map_osm_basemap_selector_entry_values);
+        onlineLayerEntries = getResources().getStringArray(R.array.map_osm_basemap_selector_entries);
+
         mapBasemap.setEntryValues(ObjectArrays.concat(onlineLayerEntryValues, MapHelper.getOfflineLayerListWithTags(), String.class));
         mapBasemap.setEntries(ObjectArrays.concat(onlineLayerEntries, MapHelper.getOfflineLayerListWithTags(), String.class));
 

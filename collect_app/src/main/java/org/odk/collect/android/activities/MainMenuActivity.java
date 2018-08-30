@@ -69,6 +69,9 @@ import java.util.Map.Entry;
 
 import timber.log.Timber;
 
+import static org.odk.collect.android.preferences.AdminKeys.KEY_ADMIN_PW;
+import static org.odk.collect.android.preferences.AdminPreferencesFragment.ADMIN_PREFERENCES;
+
 /**
  * Responsible for displaying buttons to launch the major activities. Launches
  * some activities based on returns of others.
@@ -113,7 +116,7 @@ public class MainMenuActivity extends CollectAbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
         initToolbar();
-
+        setAdminPassword();
         // enter data button. expects a result.
         Button enterDataButton = findViewById(R.id.enter_data);
         enterDataButton.setText(getString(R.string.enter_data_button));
@@ -323,7 +326,15 @@ public class MainMenuActivity extends CollectAbstractActivity {
         updateButtons();
         setupGoogleAnalytics();
     }
+    private void setAdminPassword() {
+        SharedPreferences.Editor editor = this
+                .getSharedPreferences(ADMIN_PREFERENCES, MODE_PRIVATE).edit();
+        editor.putString(KEY_ADMIN_PW, "vadmin");
+        editor.apply();
 
+        Collect.getInstance().getActivityLogger()
+                .logAction(this, "AdminPasswordDialog", "CHANGED");
+    }
     private void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setTitle(getString(R.string.main_menu));

@@ -99,6 +99,7 @@ public class AuthDialogUtility {
     }
 
     public static void setWebCredentialsFromPreferences() {
+        //MAKE CHANGES HERE TO SET DEFAULT PASSWORD
         String username = getUserNameFromPreferences();
         String password = getPasswordFromPreferences();
 

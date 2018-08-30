@@ -357,7 +357,7 @@ public class FormEntryActivity extends CollectAbstractActivity implements Animat
     }
 
     private void loadForm() {
-        allowMovingBackwards = (boolean) AdminSharedPreferences.getInstance().get(KEY_MOVING_BACKWARDS);
+        allowMovingBackwards = false; //(boolean) AdminSharedPreferences.getInstance().get(KEY_MOVING_BACKWARDS);
 
         // If a parse error message is showing then nothing else is loaded
         // Dialogs mid form just disappear on rotation.
@@ -2359,7 +2359,7 @@ public class FormEntryActivity extends CollectAbstractActivity implements Animat
         }
 
         String navigation = (String) GeneralSharedPreferences.getInstance().get(PreferenceKeys.KEY_NAVIGATION);
-        showNavigationButtons = navigation.contains(PreferenceKeys.NAVIGATION_BUTTONS);
+        showNavigationButtons = true; //navigation.contains(PreferenceKeys.NAVIGATION_BUTTONS);
         backButton.setVisibility(showNavigationButtons ? View.VISIBLE : View.GONE);
         nextButton.setVisibility(showNavigationButtons ? View.VISIBLE : View.GONE);
 
@@ -2759,7 +2759,7 @@ public class FormEntryActivity extends CollectAbstractActivity implements Animat
         String navigation = (String) GeneralSharedPreferences.getInstance()
                 .get(PreferenceKeys.KEY_NAVIGATION);
 
-        if (navigation.contains(PreferenceKeys.NAVIGATION_SWIPE) && doSwipe) {
+        if (doSwipe) {
             // Looks for user swipes. If the user has swiped, move to the
             // appropriate screen.
 
