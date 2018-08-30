@@ -71,6 +71,7 @@ import timber.log.Timber;
 
 import static org.odk.collect.android.preferences.AdminKeys.KEY_ADMIN_PW;
 import static org.odk.collect.android.preferences.AdminPreferencesFragment.ADMIN_PREFERENCES;
+import static org.odk.collect.android.preferences.PreferenceKeys.KEY_APP_LANGUAGE;
 
 /**
  * Responsible for displaying buttons to launch the major activities. Launches
@@ -239,12 +240,12 @@ public class MainMenuActivity extends CollectAbstractActivity {
             return;
         }
 
-        {
+        /*{
             // dynamically construct the "ODK Collect vA.B" string
             TextView mainMenuMessageLabel = findViewById(R.id.main_menu_header);
             mainMenuMessageLabel.setText(Collect.getInstance()
                     .getVersionedAppName());
-        }
+        }*/
 
         File f = new File(Collect.ODK_ROOT + "/collect.settings");
         File j = new File(Collect.ODK_ROOT + "/collect.settings.json");
@@ -274,8 +275,8 @@ public class MainMenuActivity extends CollectAbstractActivity {
             }
         }
 
-        reviewSpacer = findViewById(R.id.review_spacer);
-        getFormsSpacer = findViewById(R.id.get_forms_spacer);
+       // reviewSpacer = findViewById(R.id.review_spacer);
+       // getFormsSpacer = findViewById(R.id.get_forms_spacer);
 
         adminPreferences = this.getSharedPreferences(
                 AdminPreferencesActivity.ADMIN_PREFERENCES, 0);
@@ -331,7 +332,10 @@ public class MainMenuActivity extends CollectAbstractActivity {
                 .getSharedPreferences(ADMIN_PREFERENCES, MODE_PRIVATE).edit();
         editor.putString(KEY_ADMIN_PW, "vadmin");
         editor.apply();
-
+        SharedPreferences.Editor edit = PreferenceManager
+                .getDefaultSharedPreferences(this).edit();
+        edit.putString(KEY_APP_LANGUAGE, "fr");
+        edit.apply();
         Collect.getInstance().getActivityLogger()
                 .logAction(this, "AdminPasswordDialog", "CHANGED");
     }
