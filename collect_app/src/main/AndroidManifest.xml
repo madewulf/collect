@@ -87,6 +87,15 @@ the specific language governing permissions and limitations under the License.
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true">
+
+        <provider
+            android:name=".provider.FormsProvider"
+            android:authorities="com.bluesquarehub.vignettes.forms"
+            android:exported="true" />
+        <provider
+            android:name=".provider.InstanceProvider"
+            android:authorities="com.bluesquarehub.vignettes.instances"
+            android:exported="true" />
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -115,8 +124,8 @@ the specific language governing permissions and limitations under the License.
 
                 <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:mimeType="vnd.android.cursor.item/vnd.odk.form" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.odk.instance" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.odk.vignette.form" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.odk.vignette.instance" />
             </intent-filter>
         </activity>
         <activity
@@ -139,7 +148,7 @@ the specific language governing permissions and limitations under the License.
 
                 <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:mimeType="vnd.android.cursor.dir/vnd.odk.instance" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.odk.vignette.instance" />
             </intent-filter>
         </activity>
         <activity android:name=".activities.FormChooserList">
@@ -150,7 +159,7 @@ the specific language governing permissions and limitations under the License.
 
                 <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:mimeType="vnd.android.cursor.dir/vnd.odk.form" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.odk.vignette.form" />
             </intent-filter>
         </activity>
         <activity android:name=".activities.FormDownloadList" />

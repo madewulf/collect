@@ -23,7 +23,7 @@ import android.provider.BaseColumns;
  * Convenience definitions for NotePadProvider
  */
 public final class FormsProviderAPI {
-    public static final String AUTHORITY = "org.odk.collect.android.provider.odk.forms";
+    public static final String AUTHORITY = "com.bluesquarehub.vignettes.forms";
 
     // This class cannot be instantiated
     private FormsProviderAPI() {
@@ -38,8 +38,8 @@ public final class FormsProviderAPI {
         }
 
         public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/forms");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.odk.form";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.odk.form";
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.odk.vignette.form";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.odk.vignette.form";
 
         // These are the only things needed for an insert
         public static final String DISPLAY_NAME = "displayName";
