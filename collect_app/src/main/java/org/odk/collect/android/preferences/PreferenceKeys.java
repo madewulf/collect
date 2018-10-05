@@ -65,6 +65,7 @@ public final class PreferenceKeys {
     public static final String ACTIVITY_LOGGER_ANALYTICS    = "activity_logger_event";
     public static final String KEY_LAST_VERSION             = "lastVersion";
     public static final String KEY_FIRST_RUN                = "firstRun";
+    public static final String VIGNETTES_PREFS_SET          = "alreadySetVignettesPrefs";
     /** Whether any existing username and email values have been migrated to form metadata */
     static final String KEY_METADATA_MIGRATED               = "metadata_migrated";
     static final String KEY_AUTOSEND_WIFI                   = "autosend_wifi";

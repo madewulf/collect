@@ -38,7 +38,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 
@@ -114,10 +113,11 @@ public class MainMenuActivity extends CollectAbstractActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setVignetteDefaults();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
         initToolbar();
-        setAdminPassword();
+
         // enter data button. expects a result.
         Button enterDataButton = findViewById(R.id.enter_data);
         enterDataButton.setText(getString(R.string.enter_data_button));
@@ -327,17 +327,29 @@ public class MainMenuActivity extends CollectAbstractActivity {
         updateButtons();
         setupGoogleAnalytics();
     }
-    private void setAdminPassword() {
-        SharedPreferences.Editor editor = this
-                .getSharedPreferences(ADMIN_PREFERENCES, MODE_PRIVATE).edit();
-        editor.putString(KEY_ADMIN_PW, "vadmin");
-        editor.apply();
-        SharedPreferences.Editor edit = PreferenceManager
-                .getDefaultSharedPreferences(this).edit();
-        edit.putString(KEY_APP_LANGUAGE, "fr");
-        edit.apply();
-        Collect.getInstance().getActivityLogger()
-                .logAction(this, "AdminPasswordDialog", "CHANGED");
+
+    private void setVignetteDefaults() {
+        SharedPreferences prefs = this
+                .getSharedPreferences(ADMIN_PREFERENCES, MODE_PRIVATE);
+        boolean prefsSet = prefs.getBoolean(PreferenceKeys.VIGNETTES_PREFS_SET, false);
+        if (!prefsSet) {
+
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString(KEY_ADMIN_PW, "vadmin");
+            editor.apply();
+            SharedPreferences.Editor edit = PreferenceManager
+                    .getDefaultSharedPreferences(this).edit();
+            edit.putString(KEY_APP_LANGUAGE, "fr");
+            edit.apply();
+
+            Collect.getInstance().getActivityLogger()
+                    .logAction(this, "AdminPasswordDialog", "CHANGED");
+            editor.putBoolean(PreferenceKeys.VIGNETTES_PREFS_SET, true);
+            editor.commit();
+            editor.apply();
+            this.recreate();
+        }
+
     }
     private void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -353,7 +365,7 @@ public class MainMenuActivity extends CollectAbstractActivity {
 
         boolean edit = sharedPreferences.getBoolean(
                 AdminKeys.KEY_EDIT_SAVED, true);
-        if (!edit) {
+        if (true) {
             if (reviewDataButton != null) {
                 reviewDataButton.setVisibility(View.GONE);
             }
