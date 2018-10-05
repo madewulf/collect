@@ -18,7 +18,7 @@
   <string name="cancel_loading_form">Annuler</string>
   <string name="cancel_location">Annuler</string>
   <string name="canceling">En train d\'annuler</string>
-  <string name="cannot_edit_completed_form">Ce vignette ne peut pas être modifié une fois finalisé. Il est peut-être encrypté.</string>
+  <string name="cannot_edit_completed_form">Cette vignette ne peut pas être modifiée une fois finalisée. Elle est peut-être encryptée.</string>
   <string name="capture_audio">Enregistrer de l\'audio</string>
   <string name="capture_image">Prendre une photo</string>
   <string name="capture_osm">Lancer OpenMapKit</string>
@@ -93,8 +93,8 @@
   <string name="no_connection">Pas de connexion réseau disponible</string>
   <string name="no_items_display">Rien à afficher.</string>
   <string name="no_items_display_forms">Il n\'y a rien à afficher.\n\nEssayez d\'obtenir et de remplir un vignette vierge.</string>
-  <string name="no_items_display_sent_forms">Il n\'y a rien à afficher.\n\nEssayez d\'envoyer un vignette finalisé.</string>
-  <string name="no_items_display_instances">Il n\'y a rien à afficher.\n\nFinalisez vos vignettes enregistrés avant de les envoyer.</string>
+  <string name="no_items_display_sent_forms">Il n\'y a rien à afficher.\n\nEssayez d\'envoyer une vignette finalisée.</string>
+  <string name="no_items_display_instances">Il n\'y a rien à afficher.\n\nFinalisez vos vignettes enregistrées avant de les envoyer.</string>
   <string name="ok">OK</string>
   <string name="parse_error">Désolé. Impossible d\'analyser le vignette.</string>
   <string name="parse_legacy_formlist_failed">Le serveur n\'a pas répondu avec un document de vignettes compatible avec Aggregate 0.9.x. : %s</string>
