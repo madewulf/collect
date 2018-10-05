@@ -67,7 +67,7 @@ if (secretsFile.exists()) {
 android {
     compileSdkVersion(27)
     defaultConfig {
-        applicationId('com.bluesquarehub.vignettes')
+        applicationId 'com.bluesquarehub.vignettes'
         minSdkVersion(16)
         targetSdkVersion(22)
         versionName getVersionName()
@@ -153,6 +153,7 @@ android {
             }
         }
     }
+
     productFlavors {
     }
 }
