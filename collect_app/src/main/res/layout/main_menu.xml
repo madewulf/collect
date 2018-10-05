@@ -65,10 +65,9 @@
         android:layout_height="150dp"
         android:background="@drawable/button_selector"
         android:gravity="center_vertical|center_horizontal"
-        android:textColor="#fff"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        />
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
 
 
@@ -97,56 +96,48 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
-                android:text="Choisir une action pour gérer les vignettes:"
+                android:text="Choisir une option"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:baselineAligned="false"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="0dp">
 
                 <Button
                     android:id="@+id/view_sent_forms"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_width="fill_parent"
                     android:padding="10dp"
                     android:text="@string/view_sent_forms"
+                    android:textAllCaps="false"
                     android:textSize="21sp"
                     android:layout_weight="0.30"/>
                 <Button
                     android:id="@+id/review_data"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_width="fill_parent"
                     android:padding="10dp"
                     android:textSize="21sp"
+                    android:textAllCaps="false"
                     android:layout_weight="0.30"/>
 
                 <Button
                     android:id="@+id/send_data"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_width="fill_parent"
                     android:padding="10dp"
                     android:textSize="21sp"
+                    android:textAllCaps="false"
                     android:layout_weight="0.30"/>
-
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:orientation="horizontal">
-
 
                 <Button
                     android:id="@+id/get_forms"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:layout_height="0dp"
+                    android:layout_width="fill_parent"
                     android:padding="10dp"
                     android:textSize="21sp"
                     android:layout_weight="0.30"/>
@@ -154,12 +145,17 @@
 
                 <Button
                     android:id="@+id/manage_forms"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:layout_height="0dp"
+                    android:layout_width="fill_parent"
                     android:padding="10dp"
                     android:textSize="21sp"
                     android:layout_weight="0.30"/>
+
+
             </LinearLayout>
+
+
 
 
         </LinearLayout>
