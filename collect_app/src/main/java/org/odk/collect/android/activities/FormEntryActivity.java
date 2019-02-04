@@ -130,6 +130,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import timber.log.Timber;
 
@@ -2756,10 +2757,10 @@ public class FormEntryActivity extends CollectAbstractActivity implements Animat
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
                            float velocityY) {
         // only check the swipe if it's enabled in preferences
-        String navigation = (String) GeneralSharedPreferences.getInstance()
+        String  navigationString  = (String) GeneralSharedPreferences.getInstance()
                 .get(PreferenceKeys.KEY_NAVIGATION);
 
-        if (doSwipe) {
+        if (navigationString!=null && !navigationString.equals(PreferenceKeys.NAVIGATION_BUTTONS)) {
             // Looks for user swipes. If the user has swiped, move to the
             // appropriate screen.
 
