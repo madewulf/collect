@@ -125,11 +125,35 @@ public class MainMenuActivity extends CollectAbstractActivity {
             @Override
             public void onClick(View v) {
                 if (Collect.allowClick()) {
-                    Collect.getInstance().getActivityLogger()
-                            .logAction(this, "fillBlankForm", "click");
-                    Intent i = new Intent(getApplicationContext(),
-                            FormChooserList.class);
-                    startActivity(i);
+                    AlertDialog alertDialog = new AlertDialog.Builder(MainMenuActivity.this).create();
+                    alertDialog.setTitle("Environnement");
+                    alertDialog.setMessage("Dans quel type de structure vous trouvez-vous?");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Un hôpital",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Collect.getInstance().getActivityLogger()
+                                            .logAction(this, "fillBlankForm", "click");
+                                    Intent i = new Intent(getApplicationContext(),
+                                            FormChooserList.class);
+                                    i.putExtra("NR_QUESTIONS", 4);
+                                    startActivity(i);
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Un centre de santé",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Collect.getInstance().getActivityLogger()
+                                            .logAction(this, "fillBlankForm", "click");
+                                    Intent i = new Intent(getApplicationContext(),
+                                            FormChooserList.class);
+                                    i.putExtra("NR_QUESTIONS", 2);
+                                    startActivity(i);
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+
                 }
             }
         });

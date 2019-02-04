@@ -83,6 +83,11 @@ public class FormsDao {
         return cursorLoader;
     }
 
+
+    public CursorLoader getRandomFormsCursorLoader(int size) {
+        return new CursorLoader(Collect.getInstance(), FormsProviderAPI.FormsColumns.CONTENT_URI, null, null, null, "RANDOM() LIMIT " + size);
+    }
+
     private CursorLoader getFormsCursorLoader(String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         return new CursorLoader(Collect.getInstance(), FormsProviderAPI.FormsColumns.CONTENT_URI, projection, selection, selectionArgs, sortOrder);
     }
