@@ -243,7 +243,7 @@ public class FormChooserList extends FormListActivity implements
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         showProgressBar();
-        int nr = getIntent().getIntExtra("NR_QUESTIONS", 2);
+        int nr = getIntent().getIntExtra("NR_QUESTIONS", 1);
         return new FormsDao().getRandomFormsCursorLoader(nr);
     }
 

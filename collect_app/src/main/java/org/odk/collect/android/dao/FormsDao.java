@@ -21,9 +21,11 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.BaseColumns;
 import android.support.v4.content.CursorLoader;
+import android.util.Log;
 
 import org.odk.collect.android.application.Collect;
 import org.odk.collect.android.dto.Form;
+import org.odk.collect.android.provider.FormsProvider;
 import org.odk.collect.android.provider.FormsProviderAPI;
 
 import java.util.ArrayList;
@@ -85,7 +87,39 @@ public class FormsDao {
 
 
     public CursorLoader getRandomFormsCursorLoader(int size) {
-        return new CursorLoader(Collect.getInstance(), FormsProviderAPI.FormsColumns.CONTENT_URI, null, null, null, "RANDOM() LIMIT " + size);
+        String selection = FormsProviderAPI.FormsColumns.JR_FORM_ID + " in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        String [] selectionArgs ;
+        if (size==2)
+        {
+            selectionArgs = new String[]{"vignettes_final_1",
+                    "vignettes2_final",
+                    "vignettes3_final",
+                    "vignettes4_final",
+                    "vignettes5_final",
+                    "vignettes6_final",
+                    "vignettes7_final",
+                    "vignettes9_final",
+                    "vignettes10_final",
+                    "vignettes11_final",
+                    "vignettes12_final",
+                    "vignettes13_final"};
+        } else {
+            selectionArgs = new String[]{"vignettes_final_1",
+                    "vignettes2_final",
+                    "vignettes3_final",
+                    "vignettes4_final",
+                    "vignettes5_final",
+                    "vignettes6_final",
+                    "vignettes7_final",
+                    "vignettes9_final",
+                    "vignettes10_final",
+                    "vignettes11_final",
+                    "vignettes12_final",
+                    "vignettes19_final"};
+        }
+
+        return new CursorLoader(Collect.getInstance(), FormsProviderAPI.FormsColumns.CONTENT_URI, null, selection, selectionArgs, "RANDOM() LIMIT 1");
     }
 
     private CursorLoader getFormsCursorLoader(String[] projection, String selection, String[] selectionArgs, String sortOrder) {
