@@ -87,12 +87,11 @@ public class FormsDao {
 
 
     public CursorLoader getRandomFormsCursorLoader(int size) {
-        String selection = FormsProviderAPI.FormsColumns.JR_FORM_ID + " in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-        String [] selectionArgs ;
-        if (size==2)
-        {
-            selectionArgs = new String[]{"vignettes_final_1",
+        String selection = "";
+        String[] selectionArgs;
+        if (size == 2) {
+            selectionArgs = new String[]{
+                    "vignettes_final_1",
                     "vignettes2_final",
                     "vignettes3_final",
                     "vignettes4_final",
@@ -100,12 +99,18 @@ public class FormsDao {
                     "vignettes6_final",
                     "vignettes7_final",
                     "vignettes9_final",
+                    "vignettes8_final",
+                    "vignettes14_final",
+                    "vignettes16_final",
+                    "vignettes17_final",
                     "vignettes10_final",
                     "vignettes11_final",
                     "vignettes12_final",
                     "vignettes13_final"};
+
         } else {
-            selectionArgs = new String[]{"vignettes_final_1",
+            selectionArgs = new String[]{
+                    "vignettes_final_1",
                     "vignettes2_final",
                     "vignettes3_final",
                     "vignettes4_final",
@@ -116,7 +121,26 @@ public class FormsDao {
                     "vignettes10_final",
                     "vignettes11_final",
                     "vignettes12_final",
-                    "vignettes19_final"};
+                    "vignettes19_final",
+                    "vignettes8_final",
+                    "vignettes14_final",
+                    "vignettes16_final",
+                    "vignettes17_final",
+                    "vignettes19b_final"};
+
+        }
+
+        for (int i = 0; i < selectionArgs.length; i++) {
+            if (i != 0) {
+                selection = selection + " or ";
+            }
+            selection = selection + FormsProviderAPI.FormsColumns.JR_FORM_ID + " = ? ";
+        }
+
+        if (size == 2) {
+            selection = selection + " or " + FormsProviderAPI.FormsColumns.JR_FORM_ID + " like '%_hospital%'";
+        } else {
+            selection = selection + " or " + FormsProviderAPI.FormsColumns.JR_FORM_ID + " like '%_centre%'";
         }
 
         return new CursorLoader(Collect.getInstance(), FormsProviderAPI.FormsColumns.CONTENT_URI, null, selection, selectionArgs, "RANDOM() LIMIT 1");
