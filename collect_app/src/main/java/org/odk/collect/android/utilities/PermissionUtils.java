@@ -82,7 +82,8 @@ public class PermissionUtils {
         Dexter.withActivity(activity)
                 .withPermissions(
                         Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_PHONE_STATE
                 ).withListener(multiplePermissionsListener)
                 .withErrorListener(error -> {
                     Timber.i(error.name());
