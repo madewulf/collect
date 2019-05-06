@@ -466,7 +466,7 @@ public class FormDownloadList extends FormListActivity implements FormListDownlo
 
         SparseBooleanArray sba = listView.getCheckedItemPositions();
         for (int i = 0; i < listView.getCount(); i++) {
-            if (sba.get(i, false)) {
+            if (true) {
                 HashMap<String, String> item =
                         (HashMap<String, String>) listView.getAdapter().getItem(i);
                 filesToDownload.add(formNamesAndURLs.get(item.get(FORMDETAIL_KEY)));
@@ -634,8 +634,9 @@ public class FormDownloadList extends FormListActivity implements FormListDownlo
             filteredFormList.addAll(formList);
             updateAdapter();
             selectSupersededForms();
-            downloadButton.setEnabled(listView.getCheckedItemCount() > 0);
+            downloadButton.setEnabled(true);
             toggleButton.setEnabled(listView.getCount() > 0);
+            toggleButton.setVisibility(View.GONE);
             toggleButtonLabel(toggleButton, listView);
         }
     }
