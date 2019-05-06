@@ -455,7 +455,7 @@ public class MainMenuActivity extends CollectAbstractActivity {
             }
         } else {
             if (manageFilesButton != null) {
-                manageFilesButton.setVisibility(View.VISIBLE);
+               // manageFilesButton.setVisibility(View.VISIBLE);
             }
         }
 
