@@ -62,7 +62,7 @@
   <string name="fetching_file">Récupération de %1$s.\n\nvignette %2$s de %3$s vignette(s).</string>
   <string name="file_deleted_error">Désolé, %1$s de %2$s vignettes sélectionnés ont échoué la suppression.</string>
   <string name="file_deleted_ok">%s vignette(s) supprimé(s) avec succès.</string>
-  <string name="file_delete_in_progress">Désolé, une action de suppression d\'un vignette est en cours.</string>
+  <string name="file_delete_in_progress">Désolé, une action de suppression d\'une vignette est en cours.</string>
   <string name="file_invalid">Le fichier %s n\'est pas valide.</string>
   <string name="file_missing">Fichier %s manquant</string>
   <string name="finished_disk_scan">Le scan est fini. Tous les vignettes sont chargés.</string>
@@ -92,7 +92,7 @@
   <string name="noselect_error">Désolé, vous n\'avez pas sélectionné une vignette.</string>
   <string name="no_connection">Pas de connexion réseau disponible</string>
   <string name="no_items_display">Rien à afficher.</string>
-  <string name="no_items_display_forms">Il n\'y a rien à afficher.\n\nEssayez d\'obtenir et de remplir un vignette vierge.</string>
+  <string name="no_items_display_forms">Il n\'y a rien à afficher.\n\nEssayez d\'obtenir et de remplir une vignette vierge.</string>
   <string name="no_items_display_sent_forms">Il n\'y a rien à afficher.\n\nEssayez d\'envoyer une vignette finalisée.</string>
   <string name="no_items_display_instances">Il n\'y a rien à afficher.\n\nFinalisez vos vignettes enregistrées avant de les envoyer.</string>
   <string name="ok">OK</string>
@@ -109,13 +109,13 @@
   <string name="replace_barcode">Remplacer le code-barre</string>
   <string name="required_answer_error">Réponse obligatoire!</string>
   <string name="review_data">Éditer une vignette sauvegardée</string>
-  <string name="review_data_button">Éditer un vignette sauvegardé (%s)</string>
+  <string name="review_data_button">Éditer une vignette sauvegardé (%s)</string>
   <string name="save_all_answers">Sauvegarder le vignette</string>
   <string name="save_enter_data_description">Vous êtes à la fin de \"%s\".</string>
-  <string name="saving_form">Sauvegarde du vignette…</string>
+  <string name="saving_form">Sauvegarde de la vignette…</string>
   <string name="sending_items">Envoi de %1$s sur %2$s vignette(s)</string>
   <string name="send_data">Envoyer</string>
-  <string name="send_data_button">Envoyer un vignette finalisé (%s)</string>
+  <string name="send_data_button">Envoyer une vignette finalisé (%s)</string>
   <string name="send_selected_data">Envoyer éléments sélectionnés</string>
   <string name="view_sent_forms">Voir</string>
   <string name="view_sent_forms_button">Voir vignette envoyé (%s)</string>
@@ -124,7 +124,7 @@
   <string name="server_url">URL</string>
   <string name="server_preferences">Serveur</string>
   <string name="trigger">OK. Continuer.</string>
-  <string name="uploading_data">Envoi du vignette…</string>
+  <string name="uploading_data">Envoi de la vignette…</string>
   <string name="url_error">URL non valable !</string>
   <string name="username">Nom d\'utilisateur</string>
   <string name="view_hierarchy">Aller à la ligne de saisie</string>
@@ -189,7 +189,7 @@
   <!--http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html-->
   <string name="deleted_on_date_at_time">\'Supprimé le\' EEE dd MMM yyyy \'à\' HH:mm</string>
   <string name="version">Version:</string>
-  <string name="parent_form_not_present">Il n\'est pas possible de modifier ce vignette car le vignette vierge correspondant n\'existe pas ou a été supprimé.\n\nID du vignette: %1$s</string>
+  <string name="parent_form_not_present">Il n\'est pas possible de modifier ce vignette car le vignette vierge correspondant n\'existe pas ou a été supprimé.\n\nID de la vignette: %1$s</string>
   <string name="launch_app">Démarrer</string>
   <string name="no_app">L\'application demandée n\'existe pas. Saisissez les informations manuellement.</string>
   <string name="select_one">Sélectionner une seule réponse</string>
@@ -254,7 +254,7 @@
   <string name="fs_file_copy_error">Impossible de copier \'%1$s\' sur \'%2$s\'. Raison: %3$s</string>
   <string name="survey_internal_error">Erreur interne : un ou plusieurs champs de saisie peuvent avoir été ignorés.</string>
   <string name="survey_multiple_forms_error">Vous avez téléchargé deux vignettes différents avec le même numéro d\'identification et la même version. Peut-être que le même vignette a été téléchargés deux fois ou à deux serveurs différents. Dans tous les cas, vous devez supprimer un.</string>
-  <string name="survey_loading_reading_form_message">Lecture du vignette…</string>
+  <string name="survey_loading_reading_form_message">Lecture de la vignette…</string>
   <string name="survey_loading_reading_data_message">Lecture des données du sondage…</string>
   <string name="survey_loading_reading_csv_message">Lecture des fichiers CSV…</string>
   <string name="survey_saving_validating_message">Validation des réponses…</string>
@@ -362,7 +362,7 @@
   <string name="bad_uri">Mauvais URI: %s</string>
   <string name="unrecognized_uri">URI non reconnu: %s</string>
   <!--&lt; and &gt; surrounds the text so it will appear as <no form loaded>-->
-  <string name="no_form_loaded">&lt;aucun vignette chargé&gt;</string>
+  <string name="no_form_loaded">&lt;aucune vignette chargé&gt;</string>
   <string name="settings_successfully_loaded_file_notification">Paramètres chargés du fichier avec succès</string>
   <string name="corrupt_settings_file_notification">Désolé, le fichier de paramétrage est corrompu. Il doit être supprimé ou remplacé.</string>
   <string name="selected_invalid_image">Le fichier choisi n\'est pas une image valide</string>
@@ -394,7 +394,7 @@
   <string name="north">N %1$s%2$s%3$s</string>
   <string name="gdrive_connection_exception">Cette image est stockée sur Google Drive et ne peut être accédée si vous êtes hors ligne.</string>
   <string name="not_exactly_one_record_for_this_instance">Pas exactement un enregistrement pour cette instance !</string>
-  <string name="not_exactly_one_blank_form_for_this_form_id">Aucun vignette vierge ne correspond à ce jr_form_id.</string>
+  <string name="not_exactly_one_blank_form_for_this_form_id">Aucune vignette vierge ne correspond à ce jr_form_id.</string>
   <string name="no_form_id_specified">Pas de FormId spécifié ???</string>
   <string name="phone_does_not_support_rsa">Le téléphone ne supporte pas le chiffrement RSA.</string>
   <string name="invalid_rsa_public_key">Clé publique RSA invalide.</string>
@@ -439,8 +439,8 @@
   <string name="filter_the_list">Filtrer la liste</string>
   <string name="language">Langue</string>
   <string name="google_auth_io_exception_msg">Impossible de faire des appels API. Si vous exécutez une compilation locale, veuillez lire le fichier \"Readme\" du projet.</string>
-  <string name="form_metadata_title">Métadonnées du vignette</string>
-  <string name="form_metadata">Métadonnées du vignette</string>
+  <string name="form_metadata_title">Métadonnées de la vignette</string>
+  <string name="form_metadata">Métadonnées de la vignette</string>
   <string name="form_metadata_summary">Ces valeurs seront ajoutées aux vignettes qui ont des champs pré-chargés d\'utilisateur, de courrier électronique et / ou de téléphone pour identifier la personne qui soumet des données.</string>
   <string name="phone_number">Numéro de téléphone</string>
   <string name="email">Adresse mail</string>
@@ -478,8 +478,8 @@
   <string name="error_front_camera_unavailable">Caméra frontale non disponible sur cet appareil</string>
   <string name="camera_error">Cet appareil ne prend pas en charge l\'API Camera2.</string>
   <string name="invalid_range_widget">Les paramètres de ce widget sont invalides!</string>
-  <string name="form_entry_setting">Paramètres d\'entrée du vignette</string>
-  <string name="form_entry_settings_summary">Appuyez pour gérer les éléments du vignette</string>
+  <string name="form_entry_setting">Paramètres d\'entrée de la vignette</string>
+  <string name="form_entry_settings_summary">Appuyez pour gérer les éléments de la vignette</string>
   <string name="user_settings">Paramètres utilisateurs</string>
   <string name="user_setting_summary">Appuyez pour gérer les paramètres généraux</string>
   <string name="main_menu_settings">Paramètres du Menu principal</string>
@@ -505,7 +505,7 @@
   <string name="show_splash_title">Ecran d\'accueil</string>
   <string name="server_settings_title">Serveur</string>
   <string name="type">Type</string>
-  <string name="form_entry">Décochez pour cacher depuis la saisie du vignette</string>
+  <string name="form_entry">Décochez pour cacher depuis la saisie de la vignette</string>
   <string name="use_device_language">Utiliser la langue de l\'appareil</string>
   <string name="not_supported_offline_layer_format">Les fonds cartographiques hors ligne sélectionnés utilisent le format PBF qui n\'est pas pris en charge!</string>
   <string name="invalid_email_address">Adresse mail invalide!</string>
@@ -515,7 +515,7 @@
   <string name="edit_value">Modifier valeur</string>
   <string name="no_value_selected">Aucune valeur choisie</string>
   <string name="form_delete_message">Supprimer les vignettes sélectionnés</string>
-  <string name="deleting_form_dialog_update_message">Suppression du vignette: %1$d sur %2$d </string>
+  <string name="deleting_form_dialog_update_message">Suppression de la vignette: %1$d sur %2$d </string>
   <string name="search">Rechercher</string>
   <string name="null_intent_value">L\'application externe n\'a pas fourni les informations attendues.</string>
   <string name="image_size_large">Grande (3072px)</string>
@@ -573,7 +573,7 @@
   <string name="moving_backwards_enabled_message">Vous pourrez vouloir consulter les paramètres suivants :\n\n\u2022 Modifier le vignette sauvegardé\n\u2022 Sauvegarder le vignette\n\u2022 Aller à la ligne de saisie\n\u2022 Traitement des contraintes</string>
   <string name="yes">Oui</string>
   <string name="no">Non</string>
-  <string name="newer_version_of_a_form_info">Ceci est une version mise à jour d\'un vignette dont vous disposez déjà !</string>
+  <string name="newer_version_of_a_form_info">Ceci est une version mise à jour d\'une vignette dont vous disposez déjà !</string>
   <string name="svg_file_does_not_exist">Le fichier SVG n\'existe pas !</string>
   <string name="start_video_capture_instruction">Toucher l\'écran pour commencer l\'enregistrement</string>
   <string name="stop_video_capture_instruction">Enregistrement commencé. Toucher l\'écran pour l\'arrêter.</string>
@@ -605,7 +605,7 @@
   <string name="location_metadata">Satellites disponibles: %1$d/24\n\nTemps écoulé: %2$s</string>
   <string name="instance_upload_cancelled">Instance de téléchargement annulée</string>
   <string name="hide_old_form_versions_setting_title">Cacher les anciennes versions de vignettes</string>
-  <string name="hide_old_form_versions_setting_summary">Seule la version la plus récente apparaîtra dans Remplir un vignette</string>
+  <string name="hide_old_form_versions_setting_summary">Seule la version la plus récente apparaîtra dans Remplir une vignette</string>
   <string name="sms_pref_dialog_title">Numéro de téléphone de la destination</string>
   <string name="sms_pref_title">Numéro de téléphone de la destination</string>
   <string name="sms_invalid_phone_number">Numéro de téléphone invalide!</string>
