@@ -83,6 +83,7 @@ the specific language governing permissions and limitations under the License. -
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
             android:clickable="false"
-            android:focusable="false" />
+            android:focusable="false"
+            android:visibility="gone"/>
     </RelativeLayout>
 </org.odk.collect.android.views.TwoItemMultipleChoiceView>

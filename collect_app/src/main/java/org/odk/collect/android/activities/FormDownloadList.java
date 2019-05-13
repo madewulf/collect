@@ -464,12 +464,15 @@ public class FormDownloadList extends FormListActivity implements FormListDownlo
         int totalCount = 0;
         ArrayList<FormDetails> filesToDownload = new ArrayList<FormDetails>();
 
-        SparseBooleanArray sba = listView.getCheckedItemPositions();
         for (int i = 0; i < listView.getCount(); i++) {
             if (true) {
                 HashMap<String, String> item =
                         (HashMap<String, String>) listView.getAdapter().getItem(i);
-                filesToDownload.add(formNamesAndURLs.get(item.get(FORMDETAIL_KEY)));
+                FormDetails fd = formNamesAndURLs.get(item.get(FORMDETAIL_KEY));
+                if (fd.isNewerFormVersionAvailable() || fd.areNewerMediaFilesAvailable()) {
+                    filesToDownload.add(formNamesAndURLs.get(item.get(FORMDETAIL_KEY)));
+                }
+
             }
         }
         totalCount = filesToDownload.size();
