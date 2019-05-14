@@ -70,8 +70,8 @@ android {
         applicationId 'com.bluesquarehub.vignettes'
         minSdkVersion(16)
         targetSdkVersion(26)
-        versionName '1.07'
-        versionCode 107
+        versionName '1.09'
+        versionCode 109
         testInstrumentationRunner('android.support.test.runner.AndroidJUnitRunner')
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
