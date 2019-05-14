@@ -216,7 +216,8 @@ public class DownloadFormListUtils {
                 boolean isNewerFormVersionAvailable = false;
                 boolean areNewerMediaFilesAvailable = false;
                 ManifestFile manifestFile = null;
-                if (isThisFormAlreadyDownloaded(formId)) {
+                boolean alreadyDownloaded = isThisFormAlreadyDownloaded(formId);
+                if (alreadyDownloaded) {
                     isNewerFormVersionAvailable = isNewerFormVersionAvailable(FormDownloader.getMd5Hash(hash));
                     if ((!isNewerFormVersionAvailable || alwaysCheckMediaFiles) && manifestUrl != null) {
                         manifestFile = getManifestFile(manifestUrl);
@@ -231,7 +232,7 @@ public class DownloadFormListUtils {
                 formList.put(formId, new FormDetails(formName, downloadUrl, manifestUrl, formId,
                         (version != null) ? version : majorMinorVersion, hash,
                         manifestFile != null ? manifestFile.getHash() : null,
-                        isNewerFormVersionAvailable, areNewerMediaFilesAvailable));
+                        isNewerFormVersionAvailable, areNewerMediaFilesAvailable, alreadyDownloaded));
             }
         } else {
             // Aggregate 0.9.x mode...
@@ -275,7 +276,7 @@ public class DownloadFormListUtils {
                         return formList;
                     }
                     formList.put(formName,
-                            new FormDetails(formName, downloadUrl, null, formId, null, null, null, false, false));
+                            new FormDetails(formName, downloadUrl, null, formId, null, null, null, false, false, false));
 
                     formId = null;
                 }

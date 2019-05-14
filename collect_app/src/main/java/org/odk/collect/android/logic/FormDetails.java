@@ -29,14 +29,14 @@ public class FormDetails implements Serializable {
     private String manifestFileHash;
     private boolean isNewerFormVersionAvailable;
     private boolean areNewerMediaFilesAvailable;
-
+    private boolean isAlreadyDownloaded;
     public FormDetails(String error) {
         errorStr = error;
     }
 
     public FormDetails(String formName, String downloadUrl, String manifestUrl, String formID,
                        String formVersion, String hash, String manifestFileHash,
-                       boolean isNewerFormVersionAvailable, boolean areNewerMediaFilesAvailable) {
+                       boolean isNewerFormVersionAvailable, boolean areNewerMediaFilesAvailable, boolean isAlreadyDownloaded) {
         this.formName = formName;
         this.downloadUrl = downloadUrl;
         this.manifestUrl = manifestUrl;
@@ -46,6 +46,7 @@ public class FormDetails implements Serializable {
         this.manifestFileHash = manifestFileHash;
         this.isNewerFormVersionAvailable = isNewerFormVersionAvailable;
         this.areNewerMediaFilesAvailable = areNewerMediaFilesAvailable;
+        this.isAlreadyDownloaded = isAlreadyDownloaded;
     }
 
     public String getErrorStr() {
@@ -82,6 +83,10 @@ public class FormDetails implements Serializable {
 
     public boolean isNewerFormVersionAvailable() {
         return isNewerFormVersionAvailable;
+    }
+
+    public boolean isAlreadyDownloaded() {
+        return isAlreadyDownloaded;
     }
 
     public boolean areNewerMediaFilesAvailable() {

@@ -469,7 +469,7 @@ public class FormDownloadList extends FormListActivity implements FormListDownlo
                 HashMap<String, String> item =
                         (HashMap<String, String>) listView.getAdapter().getItem(i);
                 FormDetails fd = formNamesAndURLs.get(item.get(FORMDETAIL_KEY));
-                if (fd.isNewerFormVersionAvailable() || fd.areNewerMediaFilesAvailable()) {
+                if (!fd.isAlreadyDownloaded() || fd.isNewerFormVersionAvailable() || fd.areNewerMediaFilesAvailable()) {
                     filesToDownload.add(formNamesAndURLs.get(item.get(FORMDETAIL_KEY)));
                 }
 
