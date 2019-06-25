@@ -74,6 +74,7 @@ import static org.odk.collect.android.logic.PropertyManager.SCHEME_USERNAME;
 import static org.odk.collect.android.preferences.PreferenceKeys.KEY_APP_LANGUAGE;
 import static org.odk.collect.android.preferences.PreferenceKeys.KEY_FONT_SIZE;
 import static org.odk.collect.android.preferences.PreferenceKeys.KEY_USERNAME;
+import static org.odk.collect.android.BuildConfig.FILE_DIRECTORY;
 
 /**
  * The Open Data Kit Collect application.
@@ -84,7 +85,7 @@ public class Collect extends Application implements HasActivityInjector {
 
     // Storage paths
     public static final String ODK_ROOT = Environment.getExternalStorageDirectory()
-            + File.separator + "vignette";
+            + File.separator + FILE_DIRECTORY;
     public static final String FORMS_PATH = ODK_ROOT + File.separator + "forms";
     public static final String INSTANCES_PATH = ODK_ROOT + File.separator + "instances";
     public static final String CACHE_PATH = ODK_ROOT + File.separator + ".cache";

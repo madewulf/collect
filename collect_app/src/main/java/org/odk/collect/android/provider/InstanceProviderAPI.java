@@ -18,12 +18,14 @@ package org.odk.collect.android.provider;
 
 import android.net.Uri;
 import android.provider.BaseColumns;
+import static org.odk.collect.android.BuildConfig.INSTANCE_AUTHORITY;
+import static org.odk.collect.android.BuildConfig.MIME_ADDON;
 
 /**
  * Convenience definitions for NotePadProvider
  */
 public final class InstanceProviderAPI {
-    public static final String AUTHORITY = "com.bluesquarehub.vignettes.instances";
+    public static final String AUTHORITY = INSTANCE_AUTHORITY;
 
     // This class cannot be instantiated
     private InstanceProviderAPI() {
@@ -44,8 +46,8 @@ public final class InstanceProviderAPI {
         }
 
         public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/instances");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.odk.vignette.instance";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.odk.vignette.instance";
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.odk."+ MIME_ADDON +"vignette.instance";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.odk." + MIME_ADDON +  "vignette.instance";
 
         // These are the only things needed for an insert
         public static final String DISPLAY_NAME = "displayName";

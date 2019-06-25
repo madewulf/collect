@@ -19,11 +19,15 @@ package org.odk.collect.android.provider;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
+import org.opendatakit.httpclientandroidlib.entity.mime.MIME;
+
+import static org.odk.collect.android.BuildConfig.FORM_AUTHORITY;
+import static org.odk.collect.android.BuildConfig.MIME_ADDON;
 /**
  * Convenience definitions for NotePadProvider
  */
 public final class FormsProviderAPI {
-    public static final String AUTHORITY = "com.bluesquarehub.vignettes.forms";
+    public static final String AUTHORITY = FORM_AUTHORITY;
 
     // This class cannot be instantiated
     private FormsProviderAPI() {
@@ -38,8 +42,8 @@ public final class FormsProviderAPI {
         }
 
         public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/forms");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.odk.vignette.form";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.odk.vignette.form";
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.odk."+ MIME_ADDON + "vignette.form";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.odk."+ MIME_ADDON+  "vignette.form";
 
         // These are the only things needed for an insert
         public static final String DISPLAY_NAME = "displayName";

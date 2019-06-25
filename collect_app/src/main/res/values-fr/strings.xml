@@ -115,7 +115,7 @@
   <string name="saving_form">Sauvegarde de la vignette…</string>
   <string name="sending_items">Envoi de %1$s sur %2$s vignette(s)</string>
   <string name="send_data">Envoyer</string>
-  <string name="send_data_button">Envoyer une vignette finalisé (%s)</string>
+  <string name="send_data_button">Envoyer une vignette finalisée (%s)</string>
   <string name="send_selected_data">Envoyer éléments sélectionnés</string>
   <string name="view_sent_forms">Voir</string>
   <string name="view_sent_forms_button">Voir vignette envoyé (%s)</string>

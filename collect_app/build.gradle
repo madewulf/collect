@@ -118,6 +118,22 @@ android {
             outputFileName = new File(outputFileName.replace(".apk", "-${defaultConfig.versionName}.apk"))
         }
     }
+
+    applicationVariants.all { variant ->
+        def name = variant.getName()
+        // Default values
+        variant.buildConfigField 'String', 'FORM_AUTHORITY', '"com.bluesquarehub.vignettes.forms"'
+        variant.buildConfigField 'String', 'INSTANCE_AUTHORITY', '"com.bluesquarehub.vignettes.instances"'
+        variant.buildConfigField 'String', 'FILE_DIRECTORY', '"vignette"'
+        variant.buildConfigField 'String', 'MIME_ADDON', '""'
+        // Specific values
+        if (name.contains("demo")) {
+            variant.buildConfigField 'String', 'FORM_AUTHORITY', '"com.bluesquarehub.vignettes.demo.forms"'
+            variant.buildConfigField 'String', 'INSTANCE_AUTHORITY', '"com.bluesquarehub.vignettes.demo.instances"'
+            variant.buildConfigField 'String', 'FILE_DIRECTORY', '"demovignette"'
+            variant.buildConfigField 'String', 'MIME_ADDON', '"demo"'
+        }
+    }
     testVariants.all { variant ->
         variant.outputs.all { output ->
             outputFileName = new File(outputFileName.replace(".apk", "-${defaultConfig.versionName}.apk"))
@@ -154,8 +170,21 @@ android {
             }
         }
     }
-
+    flavorDimensions "version"
     productFlavors {
+        prod {
+            dimension "version"
+            manifestPlaceholders = [appName: "Vignettes", appType: "lstm", iconPath: "@mipmap/ic_launcher", "authority": "com.bluesquarehub.vignettes.forms", "instanceAuthority": "com.bluesquarehub.vignettes.instances", "mimeAddon": ""]
+
+        }
+
+        demo {
+            dimension "version"
+            applicationIdSuffix ".demo"
+            versionNameSuffix "-demo"
+            manifestPlaceholders = [appName: "Test Vignettes", appType: "demo", iconPath: "@mipmap/ic_launcher_demo", "authority": "com.bluesquarehub.vignettes.demo.forms", "instanceAuthority": "com.bluesquarehub.vignettes.demo.instances", "mimeAddon": "demo"]
+        }
+
     }
 }
 
@@ -185,11 +214,11 @@ dependencies {
     implementation "com.android.support:cardview-v7:${rootProject.supportLibraryVersion}"
     implementation "com.android.support:exifinterface:${rootProject.supportLibraryVersion}"
     implementation 'com.android.support:multidex:1.0.3'
-    implementation "com.google.android.gms:play-services-analytics:${rootProject.playServicesVersion}"
-    implementation "com.google.android.gms:play-services-auth:${rootProject.playServicesVersion}"
-    implementation "com.google.android.gms:play-services-maps:${rootProject.playServicesVersion}"
-    implementation "com.google.android.gms:play-services-location:${rootProject.playServicesVersion}"
-    implementation "com.google.firebase:firebase-core:${rootProject.playServicesVersion}"
+    implementation "com.google.android.gms:play-services-analytics:16.0.8"
+    implementation "com.google.android.gms:play-services-auth:16.0.1"
+    implementation "com.google.android.gms:play-services-maps:16.1.0"
+    implementation "com.google.android.gms:play-services-location:16.0.0"
+    implementation "com.google.firebase:firebase-core:16.0.1"
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.2'
     implementation('com.google.code.gson:gson:2.6.2') {
         exclude group: 'org.apache.httpcomponents'
